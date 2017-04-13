@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60352867-1', 'auto'); 
+  ga('send', 'pageview');
+
+</script>
+<script>
+var dir = "main" 
+
+function commandlist(input){
+	if(dir == "main" & input == "ls"){
+		var info ;
+		info =' ls<br><a style="color:yellow; cursor:pointer; text-decoration: underline;" onclick="aboutme()">about_me.txt</a><a> </a><a style="color:yellow; cursor:pointer; text-decoration: underline;" onclick="rules()">rules.txt</a><a> </a><a style="color:blue; cursor:pointer; text-decoration: underline;" onclick="videos()">videos\/</a><br>user@mtintes.com:~$ </a>'
+		return info;
+	}
+	else if(dir == "videos" & input == "ls"){
+		var info ;
+		info =' ls<br><a style="color:red; cursor:pointer; text-decoration: underline;" onclick="hockey()">hockey.video</a><br>user@mtintes.com:~$ </a>'
+		return info;
+	}
+	else if(dir == "main" &( input == "read about_me" | input == "read about_me.txt")){
+		var info ;
+		info =input + '<br>Hi,<br>My name is Mike. I currently work as a DevOps engineer. I enjoy automating all the things.<br>I like to work on projects including, algorithms, writing, stand-up comedy, graphics programming, turntablism, and much more.<br>I\'ve been a radio DJ and am a big college hockey fan.<br>So far, this site is written using javascript and JQuery, feel free to copy and use it.<br><br>user@mtintes.com:~$ </a>'
+		return info;
+	}
+	else if(dir == "main" &( input == "read rules" | input == "read rules.txt")){
+		var info;
+		info = input + '<br><a>Rules for living life:<br>1. Don\'t be a prick.<br>2. Learn from your mistakes, and other people\'s.<br>3. Do something you don\'t know how to do at least once a week. <br>4. If you tell people "no", they will stop asking. <br>4. Always carry a pen. You will never know where inspiration will hit.<br>5. Instead of waiting for your turn to speak, listen.<br>6. Be interesting, not controversial. Either way people will pay attention to you, but the former will give you their respect.<br>7. Give more than you take.<br>8. Do everything you can to make a bad day good, and a good day great.<br><br>user@mtintes.com:~$ <a/>';
+		return info;
+	
+	}
+	else if(dir == "main" & (input == "cd videos" | input == "videos" | input == "videos/")){
+		var info;
+		info = input + '<br>You are now in the "videos" directory. Type "ls" to see the contents or type "cd .." to go back.<br>user@mtintes.com:~$ <a/>';
+		dir = "videos";
+		return info;
+	}
+	else if (dir == "videos" & input == "cd ..")
+	{
+	dir = "main";
+	var info;
+	info = input + '<br>user@mtintes.com:~$ <a/>';
+	return info;
+	}
+	else if (dir == "videos" &( input == "play hockey" | input == "play hockey.video"))
+	{
+	var info;
+	info = input + '<br><a><video width="320" height="240" controls><source src="Miracle.mp4" type="video/mp4"></video><br>user@mtintes.com:~$ <a/>';
+	return info;
+	}
+	else if(input == "help"){
+	var info ;
+	info =input + '<br><a>\'ls\' to see files in directory. <br> \'read [filename]\' to read a text file.<br> \'play [filename]\' to open a video file.<br><br>user@mtintes.com:~$ </a>'
+	return info;
+	}
+	else{
+		var info;
+		info = input+'<br>\''+input+'\' is not recognized as an internal or external command or operable program.<br><a>If you have never used a console before you can type "help" to get commands.<br>user@mtintes.com:~$ </a>'
+		return info;
+	}
+}
+
+function start(){
+var $cmdtype = ""
+$(document).keydown(function(e){
+	if(e.keyCode == '9'){
+		e.preventDefault();
+	}
+	if(e.keyCode == '65'){
+		$cmdtype = $("#userinput").text()+"a"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '66'){
+		$cmdtype = $("#userinput").text()+"b"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '67'){
+		$cmdtype = $("#userinput").text()+"c"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '68'){
+		$cmdtype = $("#userinput").text()+"d"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '69'){
+		$cmdtype = $("#userinput").text()+"e"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '70'){
+		$cmdtype = $("#userinput").text()+"f"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '71'){
+		$cmdtype = $("#userinput").text()+"g"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '72'){
+		$cmdtype = $("#userinput").text()+"h"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '73'){
+		$cmdtype = $("#userinput").text()+"i"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '74'){
+		$cmdtype = $("#userinput").text()+"j"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '75'){
+		$cmdtype = $("#userinput").text()+"k"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '76'){
+		$cmdtype = $("#userinput").text()+"l"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '77'){
+		$cmdtype = $("#userinput").text()+"m"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '78'){
+		$cmdtype = $("#userinput").text()+"n"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '79'){
+		$cmdtype = $("#userinput").text()+"o"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '80'){
+		$cmdtype = $("#userinput").text()+"p"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '81'){
+		$cmdtype = $("#userinput").text()+"q"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '82'){
+		$cmdtype = $("#userinput").text()+"r"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '83'){
+		$cmdtype = $("#userinput").text()+"s"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '84'){
+		$cmdtype = $("#userinput").text()+"t"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '85'){
+		$cmdtype = $("#userinput").text()+"u"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '86'){
+		$cmdtype = $("#userinput").text()+"v"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '87'){
+		$cmdtype = $("#userinput").text()+"w"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '88'){
+		$cmdtype = $("#userinput").text()+"x"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '89'){
+		$cmdtype = $("#userinput").text()+"y"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '90'){
+		$cmdtype = $("#userinput").text()+"z"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '190'){
+		$cmdtype = $("#userinput").text()+"."
+		$("#userinput").text($cmdtype);
+	}
+		if(e.keyCode == '189' | e.keyCode == '109'){
+		$cmdtype = $("#userinput").text()+"_"
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '8'){
+		e.preventDefault();
+		var $length = 0;
+		$length = $("#userinput").length;
+		console.log($cmdtype);
+		$cmdtype = $("#userinput").text();
+		var temp = $cmdtype.slice(0,$length - 2);
+		console.log(temp);
+		$("#userinput").text(temp.toString());
+	}
+	if(e.keyCode == '32'){
+		$cmdtype = $("#userinput").text()+" "
+		$("#userinput").text($cmdtype);
+	}
+	if(e.keyCode == '13'){
+		e.preventDefault();
+		var returnhtml;
+		$cmdtype = $("#userinput").text()
+		returnhtml = commandlist($cmdtype);
+		$("#cmdhead").append(returnhtml);
+		$("#userinput").text("");
+	}
+	
+});
+}
+
+function aboutme(){
+$("#userinput").text("read about_me");
+		var returnhtml;
+		$cmdtype = $("#userinput").text()
+		returnhtml = commandlist($cmdtype);
+		$("#cmdhead").append(returnhtml);
+		$("#userinput").text("");
+}
+function rules(){
+$("#userinput").text("read rules");
+		var returnhtml;
+		$cmdtype = $("#userinput").text()
+		returnhtml = commandlist($cmdtype);
+		$("#cmdhead").append(returnhtml);
+		$("#userinput").text("");
+}
+function videos(){
+$("#userinput").text("cd videos");
+		var returnhtml;
+		$cmdtype = $("#userinput").text()
+		returnhtml = commandlist($cmdtype);
+		$("#cmdhead").append(returnhtml);
+		$("#userinput").text("");
+}
+function hockey(){
+$("#userinput").text("play hockey");
+		var returnhtml;
+		$cmdtype = $("#userinput").text()
+		returnhtml = commandlist($cmdtype);
+		$("#cmdhead").append(returnhtml);
+		$("#userinput").text("");
+}
+start();
+
+</script>
+</head>
+<body style="font-family:Lucida Console; background-color:Black; color:#00FF00;">
+<a id="cmdhead">Welcome to my site. <br> If you have never used a console before you can type "help" to get commands.<br> Or type "ls" to read the directory and click the underlined word.<br>Having troubles? Try using Chrome.<br>user@mtintes.com:~$ </a><a id="userinput"></a><a id="cursor">&#x2588 </a>
+</body>
+</html> 
+ 
